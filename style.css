@@ -470,11 +470,11 @@ footer {
   }
 
   .hero--1 h1 {
-    font-size: 24px;
+    font-size: 40px;
   }
 
   .hero--1 h5 {
-    font-size: 18px;
+    font-size: 30px;
   }
 
   .hero--img {
@@ -491,11 +491,11 @@ footer {
   }
 
   .services h2 {
-    font-size: 18px;
+    font-size: 28px;
   }
 
   .services p {
-    font-size: 10px;
+    font-size: 16px;
   }
 
   .services li img {
@@ -510,7 +510,7 @@ footer {
 
   .services-ul li {
     width: 175px;
-    height: 178px;
+    height: auto;
     padding: 18px;
   }
 
@@ -534,5 +534,16 @@ footer {
     font-size: 18px;
     width: 80%;
     height: 200px;
+  }
+
+  .about-us img {
+    width: 325px;
+  }
+
+  .app-d img {
+    width: 325px;
+  }
+  .feedback {
+    display: none;
   }
 }

@@ -317,8 +317,9 @@ button:hover {
 
 .articles {
   display: flex;
-  margin: 10% 560px;
+  justify-content: center;
   gap: 110px;
+  margin: 10% 20%;
   margin-bottom: 5%;
 }
 
@@ -442,182 +443,88 @@ footer {
   color: #458ff6;
 }
 
-/* ////////////////////////////////////
-//////////////////////////////
-//////////////////////////////////////////////
-//////////////////////////////
-///////////////////////////////////////////////
-////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-///////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////// */
-/* For tablets (768px - 1024px) */
-@media screen and (max-width: 1024px) {
-  header {
-    display: none;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-  }
-
-  .hero--img {
-    height: 400px;
-    margin: 0 auto;
-  }
-
-  .hero--1 h1 {
-    font-size: 36pt;
-  }
-
-  .services-ul {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 5% 5%;
-  }
-
-  .about-us,
-  .app-d {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .about-us img,
-  .app-d img {
-    width: 100%;
-    height: auto;
-  }
-
-  .feedback {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .articles {
-    margin: 5%;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  footer {
-    grid-template-columns: repeat(2, 1fr);
-    text-align: center;
-  }
+/* mobile fiendly */
+@media (max-width: 768px) {
 }
 
-/* For mobile screens (max-width: 768px) */
-@media screen and (max-width: 768px) {
-  header {
-    display: none;
-  }
+.nav ul {
+  display: none;
+}
 
-  .name {
-    font-size: 36px;
-  }
+.title {
+  gap: 8px;
+}
 
-  .nav ul {
-    flex-direction: column;
-    gap: 10px;
-    font-size: 20px;
-  }
+.name {
+  font-size: 28px;
+}
 
-  .hero {
-    flex-direction: column-reverse;
-    text-align: center;
-    margin: 5% 5%;
-  }
+.icon {
+  display: none;
+}
 
-  .hero--img {
-    height: 300px;
-  }
+.hero {
+  flex-direction: column;
+}
 
-  .hero--1 h1 {
-    font-size: 28pt;
-  }
+.hero--1 h1 {
+  font-size: 24px;
+}
 
-  .hero--1 h5 {
-    font-size: 18pt;
-  }
+.hero--1 h5 {
+  font-size: 18px;
+}
 
-  .services-ul {
-    grid-template-columns: 1fr;
-    margin: 5%;
-  }
+.hero--img {
+  height: 346px;
+}
 
-  .about-us,
-  .app-d {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
+button {
+  height: 30px;
+  width: 100px;
+}
 
-  .about-us img,
-  .app-d img {
-    width: 100%;
-    height: auto;
-  }
+.services hr {
+  display: none;
+}
 
-  .feedback {
-    width: 90%;
-    margin: 5%;
-    font-size: 28px;
-  }
+.services h2 {
+  font-size: 18px;
+}
 
-  .articles {
-    flex-direction: column;
-    margin: 5%;
-  }
+.services p {
+  font-size: 10px;
+}
 
-  .btn1,
-  .btn2,
-  .btn3,
-  .btn4 {
-    width: 100%;
-    height: 50px;
-    font-size: 16px;
-  }
+.services li img {
+  height: 45px;
+  margin-bottom: 12px;
+  margin-top: 7px;
+}
 
-  footer {
-    grid-template-columns: 1fr;
-    text-align: center;
-    height: auto;
-  }
+.services-ul li div p {
+  margin-top: 12px;
+}
 
-  .f-title {
-    flex-direction: column;
-  }
-} /* ////////////////////////////////////
-//////////////////////////////
-//////////////////////////////////////////////
-//////////////////////////////
-///////////////////////////////////////////////
-////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-/////////////////////////////////////////////////////////////////
-//////////////////////////////
-///////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////// */
+.services-ul li {
+  width: 175px;
+  height: 178px;
+  padding: 18px;
+}
+
+.services-ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us,
+.app-d {
+  flex-direction: column;
+  margin: 5% 0;
+}
+
+.articles {
+  flex-direction: column;
+  gap: 20px;
+  margin: 5% 0;
+}

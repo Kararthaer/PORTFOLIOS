@@ -4,10 +4,16 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 0% 18%;
+  position: sticky;
+  top: 0;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .title {
@@ -253,3 +259,365 @@ body {
   font-weight: 700;
   align-items: center;
 }
+
+.feedback {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  justify-self: center;
+  text-align: center;
+  background: linear-gradient(45deg, #458ff6, #67c3f3);
+  width: 1120px;
+  height: 425px;
+  border-radius: 24px;
+  border-color: #458ff6;
+  border: 2px solid;
+}
+
+.feedback hr {
+  width: 56px;
+}
+
+.commentator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.commentator-name {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 15%;
+  align-content: center;
+  justify-content: center;
+}
+
+.commentator-name img {
+  border: 4px solid #fff;
+  border-radius: 128px;
+  width: 141px;
+}
+
+.commentator-name h4 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.commentator-name p {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.comment {
+  font-weight: 300;
+  display: flex;
+  text-align: start;
+  font-size: 19px;
+}
+
+.articles {
+  display: flex;
+  margin: 10% 560px;
+  gap: 110px;
+  margin-bottom: 5%;
+}
+
+.pros {
+  padding: 10px;
+}
+
+.pros img {
+  border: 0px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.articles h4 {
+  font-size: 21px;
+  width: 90%;
+}
+
+.articles p {
+  font-size: 16px;
+  font-weight: 200;
+  color: #7d7987;
+  width: 90%;
+}
+
+.btn5 {
+  width: 90%;
+  background-color: #fff;
+  border: none;
+  color: #4089ed;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 14px;
+}
+.btn5 img {
+  height: 14px;
+  width: 20px;
+  align-self: center;
+}
+
+.btn6 {
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 200px;
+  height: 60px;
+  border: 4px #458ff6 solid;
+  color: #458ff6;
+  border-radius: 55px;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+footer {
+  margin-top: 150px;
+  height: 432px;
+  background: linear-gradient(45deg, #458ff6, #67c3f3);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 5%;
+}
+
+.f-title {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 18px;
+}
+
+.f-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  margin: 36px 0;
+  color: #5b9bf3;
+}
+
+.f-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.f1l {
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+}
+
+.fr {
+  display: block;
+  text-align: start;
+  margin: 0 16px;
+  padding: 0 8px;
+}
+
+.fr h6 {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.fr p {
+  font-size: 18px;
+  font-weight: 300;
+  color: white;
+}
+
+.f-icon p {
+  font-size: 36px;
+  font-weight: 700;
+  color: #458ff6;
+}
+
+/* ////////////////////////////////////
+//////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////
+///////////////////////////////////////////////
+////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////// */
+/* For tablets (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  header {
+    display: none;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero--img {
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  .hero--1 h1 {
+    font-size: 36pt;
+  }
+
+  .services-ul {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 5% 5%;
+  }
+
+  .about-us,
+  .app-d {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .about-us img,
+  .app-d img {
+    width: 100%;
+    height: auto;
+  }
+
+  .feedback {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .articles {
+    margin: 5%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  header {
+    display: none;
+  }
+
+  .name {
+    font-size: 36px;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    margin: 5% 5%;
+  }
+
+  .hero--img {
+    height: 300px;
+  }
+
+  .hero--1 h1 {
+    font-size: 28pt;
+  }
+
+  .hero--1 h5 {
+    font-size: 18pt;
+  }
+
+  .services-ul {
+    grid-template-columns: 1fr;
+    margin: 5%;
+  }
+
+  .about-us,
+  .app-d {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-us img,
+  .app-d img {
+    width: 100%;
+    height: auto;
+  }
+
+  .feedback {
+    width: 90%;
+    margin: 5%;
+    font-size: 28px;
+  }
+
+  .articles {
+    flex-direction: column;
+    margin: 5%;
+  }
+
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4 {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    height: auto;
+  }
+
+  .f-title {
+    flex-direction: column;
+  }
+} /* ////////////////////////////////////
+//////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////
+///////////////////////////////////////////////
+////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+/////////////////////////////////////////////////////////////////
+//////////////////////////////
+///////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////// */

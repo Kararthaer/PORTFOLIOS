@@ -12,6 +12,8 @@
   </head>
 
   <body>
+    <script src="script.js"></script>
+
     <header class="logo">
       <div class="title">
         <div class="icon"><p>T</p></div>
@@ -19,16 +21,16 @@
       </div>
       <div class="nav">
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Find a doctor</a></li>
-          <li><a href="">Apps</a></li>
-          <li><a href="">Testimoials</a></li>
-          <li><a href="">About us</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#find-doctor">Find a doctor</a></li>
+          <li><a href="#app">App</a></li>
+          <li><a href="#testimonials">Testimoials</a></li>
+          <li><a href="#about">About us</a></li>
         </ul>
       </div>
     </header>
 
-    <div class="hero">
+    <div class="hero" id="home">
       <div class="hero hero--1">
         <h1>Virtual healthcare for you</h1>
         <h5>
@@ -45,7 +47,7 @@
       />
     </div>
 
-    <div class="services">
+    <div class="services" id="find-doctor">
       <h2><strong>Our services</strong></h2>
       <br />
       <hr />
@@ -130,7 +132,7 @@
         <button class="btn3">Learn more</button>
       </div>
     </div>
-    <div class="app-d">
+    <div class="app-d" id="app">
       <div class="app-p">
         <h2>Download our mobile apps</h2>
         <hr />
@@ -145,15 +147,101 @@
       </div>
       <img src="images/trafalgar3 1.png" alt="" />
     </div>
-    <div class="feedback"></div>
-    <div class="articles"></div>
+    <div class="feedback" id="testimonials">
+      <p>What our customer are saying</p>
+      <hr />
+      <div class="commentator">
+        <div class="commentator-name">
+          <img src="images/Edward image 1.png " alt="" />
+          <div>
+            <h4>Edward Newgate</h4>
+            <p>Founder Circle</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="comment">
+            “Our dedicated patient engagement app and <br />
+            web portal allow you to access information <br />
+            instantaneously (no tedeous form, long calls, <br />
+            or administrative hassle) and securely”
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="articles">
+      <div class="pros">
+        <img src="images/blood withdrawal image 2.png" alt="" />
+        <h4>Disease detection, check up in the laboratory</h4>
+        <p>
+          In this case, the role of the health laboratory is very important to
+          do a disease detection...
+        </p>
+        <button class="btn5">
+          Read more <img src="images/Framearrow raight blue.png" alt="" />
+        </button>
+      </div>
+
+      <div class="pros">
+        <img src="images/lab nurse image 2.png" alt="" />
+        <h4>Herbal medicines that are safe for consumption</h4>
+        <p>
+          Herbal medicine is very widely used at this time because of its very
+          good for your health...
+        </p>
+        <button class="btn5">
+          Read more <img src="images/Framearrow raight blue.png" alt="" />
+        </button>
+      </div>
+
+      <div class="pros">
+        <img src="images/facial care image 3.png" alt="" />
+        <h4>Natural care for healthy facial skin</h4>
+        <p>
+          A healthy lifestyle should start from now and also for your skin
+          health. There are some...
+        </p>
+        <button class="btn5">
+          Read more <img src="images/Framearrow raight blue.png" alt="" />
+        </button>
+      </div>
+    </div>
+    <button class="btn6">View all</button>
   </body>
-  <footer>
-    <ul>
-      <li class="logo-f"></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+
+  <footer id="about">
+    <div class="fr">
+      <div class="f-title">
+        <div class="f-icon"><p>T</p></div>
+        <div class="f-name">Trafalgar</div>
+      </div>
+      <p class="f1l">
+        Trafalgar provides progressive, and affordable healthcare, accessible on
+        mobile and online for everyone
+      </p>
+      <p class="f1l">©Trafalgar PTY LTD 2020. All rights reserved</p>
+    </div>
+    <div class="fr">
+      <h6>Company</h6>
+      <p>About</p>
+      <p>Testimonials</p>
+      <p>Find a doctor</p>
+      <p>Apps</p>
+    </div>
+    <div class="fr">
+      <h6>Region</h6>
+      <p>Indonesia</p>
+      <p>Singapore</p>
+      <p>Hongkong</p>
+      <p>Canada</p>
+    </div>
+    <div class="fr">
+      <h6>Help</h6>
+      <p>Help center</p>
+      <p>Contact support</p>
+      <p>Instructions</p>
+      <p>How it works</p>
+    </div>
   </footer>
 </html>

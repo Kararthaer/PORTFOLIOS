@@ -60,8 +60,17 @@
                 data-context="signin"
                 data-ux_mode="popup"
                 data-login_uri="http://velatradenexus.com"
+                data-cancel_on_tap_outside="false"
               ></div>
-              <div class="g_id_signin" data-type="standard"></div>
+              <div
+                class="g_id_signin"
+                data-type="standard"
+                data-size="large"
+                data-theme="outline"
+                data-text="signin_with"
+                data-shape="rectangular"
+                data-logo_alignment="left"
+              ></div>
             </form>
           </section>
 
@@ -100,5 +109,33 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script>
+      function handleGoogleSignIn(response) {
+        // Send the token to your backend
+        fetch("http://velatradenexus.com/api/google-signin", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ token: response.credential }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.token) {
+              localStorage.setItem("token", data.token);
+              localStorage.setItem("user", JSON.stringify(data.user));
+              alert("Google Sign-In successful!");
+              document.getElementById("modalOverlay").style.display = "none";
+              document.body.style.overflow = "auto";
+            } else {
+              alert(data.message || "Google Sign-In failed");
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Error connecting to server");
+          });
+      }
+    </script>
   </body>
 </html>

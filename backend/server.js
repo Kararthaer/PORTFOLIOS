@@ -137,8 +137,18 @@ app.post("/api/google-signin", async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.json({ token: ourToken });
+    // Send back user data (excluding password)
+    const userData = {
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      dateOfBirth: user.dateOfBirth,
+    };
+
+    res.json({ token: ourToken, user: userData });
   } catch (error) {
+    console.error("Google sign-in error:", error);
     res
       .status(500)
       .json({ message: "Error with Google sign-in", error: error.message });

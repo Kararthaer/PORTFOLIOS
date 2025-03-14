@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const API_URL =
     window.location.hostname === "localhost"
       ? "http://localhost:5000/api"
-      : "https://your-backend-domain.com/api";
+      : "http://velatradenexus.com/api";
 
   // Initial setup - hide both forms
   formSignup.style.display = "none";

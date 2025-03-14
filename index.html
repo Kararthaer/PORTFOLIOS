@@ -3,247 +3,98 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <title>Trafalgar</title>
+    <title>Login Modal</title>
+    <!-- Add Google Sign-In script -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <!-- Add JWT decode library -->
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
   </head>
-
   <body>
+    <!-- Trigger button to open modal -->
+    <button id="openModal" class="trigger-btn">Open Login</button>
+
+    <!-- Modal Overlay -->
+    <div id="modalOverlay" class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-btn">&times;</button>
+        <div class="form">
+          <div class="options">
+            <button class="log-in-btn1" id="sign-up">sign up</button>
+            <button class="log-in-btn1" id="log-in">log in</button>
+          </div>
+          <section id="form-login" class="form-page">
+            <h1>Enter your information</h1>
+            <form id="login-form">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                autocomplete="email"
+                placeholder="Enter Your Email"
+                required
+              />
+              <label for="password">Password</label>
+              <input
+                id="current-password"
+                type="password"
+                autocomplete="current-password"
+                placeholder="Write Your Password"
+                required
+              />
+              <button type="submit" id="logInBtn" class="btn-2">log in</button>
+              <div class="divider">
+                <span>or</span>
+              </div>
+              <!-- Add Google Sign-In button -->
+              <div
+                id="g_id_onload"
+                data-client_id="1012455829320-8kmfpi9eekbavp05iedg25361lo589hc.apps.googleusercontent.com"
+                data-callback="handleGoogleSignIn"
+              ></div>
+              <div class="g_id_signin" data-type="standard"></div>
+            </form>
+          </section>
+
+          <section id="form-signup" class="form-page">
+            <h1>Enter your information</h1>
+            <form id="signup-form" onsubmit="return validatePassword()">
+              <label for="given-name">First Name</label>
+              <input id="given-name" type="text" required />
+
+              <label for="family-name">Last Name</label>
+              <input id="family-name" type="text" required />
+
+              <label for="DOB">date of birth</label>
+              <input id="DOB" type="date" required />
+
+              <label for="signup-email">Email</label>
+              <input id="signup-email" type="email" required />
+
+              <label for="signup-password">password</label>
+              <input id="signup-password" type="password" required />
+
+              <label for="confirm-password">Confirm password</label>
+              <input id="confirm-password" type="password" required />
+              <button type="submit" class="btn-2">Sign Up</button>
+              <div class="divider">
+                <span>or</span>
+              </div>
+              <!-- Add Google Sign-In button -->
+              <div class="g_id_signin" data-type="standard"></div>
+            </form>
+            <p id="password-error" style="color: red; display: none">
+              Passwords do not match!
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
-
-    <header class="logo">
-      <div class="title">
-        <div class="icon"><p>T</p></div>
-        <div class="name">Trafalgar</div>
-      </div>
-      <div class="nav">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#find-doctor">Find a doctor</a></li>
-          <li><a href="#app">App</a></li>
-          <li><a href="#testimonials">Testimoials</a></li>
-          <li><a href="#about">About us</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <div class="hero" id="home">
-      <div class="hero hero--1">
-        <h1>Virtual healthcare for you</h1>
-        <h5>
-          Trafalgar provides progressive, and affordable <br />
-          healthcare, accessible on moobile and online <br />
-          for everyone
-        </h5>
-        <button class="btn-1"><a href="">Consult today</a></button>
-      </div>
-      <img
-        class="hero--img"
-        src="images/trafalgar-header illustration 1.webp"
-        alt="vector"
-      />
-    </div>
-
-    <div class="services" id="find-doctor">
-      <h2><strong>Our services</strong></h2>
-      <br />
-      <hr />
-      <p>
-        Choose your doctor from thousands of specialist, general, and trusted
-        hospitals
-      </p>
-      <ul class="services-ul">
-        <li>
-          <img src="images/عدسة بحث.png"" alt="" />
-          <div>
-            <h3>Search doctor</h3>
-            <p>
-              Buy your medicines with our mobile application with a simple
-              delivery system
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/medicen vector.png" alt="" />
-          <div>
-            <h3>Online pharmacy</h3>
-            <p>
-              Free consultation with our trusted doctors and get the best
-              recomendations
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/consult vector.png"" alt="" />
-          <div>
-            <h3>Consultation</h3>
-            <p>
-              We provide to you the best choises for you. adjust it to your
-              health need and make sure your undergo treatment <br />
-              with our highly qualified doctors you can cosult with us wich
-              typpe of service os sutoable for your health.
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/pt table vector.png"" alt="" />
-          <div>
-            <h3>Details info</h3>
-            <p>
-              Free consultation with our trusted doctors and get the best
-              recomendations
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/emergency kit vector.png" alt="" />
-          <div>
-            <h3>Emergency care</h3>
-            <p>
-              You can get 24/7 urgent care for yourself or your children and
-              your lovely family
-            </p>
-          </div>
-        </li>
-        <li>
-          <img src="images/pt table 2.png"" alt="" />
-          <div>
-            <h3>Tracking</h3>
-            <p>Track and save your medical history and health data</p>
-          </div>
-        </li>
-      </ul>
-      <button class="btn2">Learn more</button>
-    </div>
-
-    <div class="about-us">
-      <img src="images/trafalgar2 1.webp" alt="" />
-      <div>
-        <h2>Leading healthcare <br />providers</h2>
-        <hr />
-        <p>
-          Trafalgar provides progressive, and affordable healthcare, accessible
-          on mobile and online for everyone. To us, it's not just work. We take
-          pride in the solutions we deliver
-        </p>
-        <button class="btn3">Learn more</button>
-      </div>
-    </div>
-    <div class="app-d" id="app">
-      <div class="app-p">
-        <h2>Download our mobile apps</h2>
-        <hr />
-        <p>
-          Our dedicated patient engagement app and web portal allow you to
-          access information instantaneously (no tedeous form, long calls, or
-          administrative hassle) and securely
-        </p>
-        <button class="btn4">
-          Download <img src="images/arrow down vector.png" alt="" />
-        </button>
-      </div>
-      <img src="images/trafalgar3 1.webp" alt="" />
-    </div>
-    <div class="feedback" id="testimonials">
-      <p>What our customer are saying</p>
-      <hr />
-      <div class="commentator">
-        <div class="commentator-name">
-          <img src="images/Edward image 1.png " alt="" />
-          <div>
-            <h4>Edward Newgate</h4>
-            <p>Founder Circle</p>
-          </div>
-        </div>
-
-        <div>
-          <p class="comment">
-            “Our dedicated patient engagement app and <br />
-            web portal allow you to access information <br />
-            instantaneously (no tedeous form, long calls, <br />
-            or administrative hassle) and securely”
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="articles">
-      <div class="pros">
-        <img src="images/blood withdrawal image 2.png" alt="" />
-        <h4>Disease detection, check up in the laboratory</h4>
-        <p>
-          In this case, the role of the health laboratory is very important to
-          do a disease detection...
-        </p>
-        <button class="btn5">
-          Read more <img src="images/Framearrow raight blue.png" alt="" />
-        </button>
-      </div>
-
-      <div class="pros">
-        <img src="images/lab nurse image 2.png" alt="" />
-        <h4>Herbal medicines that are safe for consumption</h4>
-        <p>
-          Herbal medicine is very widely used at this time because of its very
-          good for your health...
-        </p>
-        <button class="btn5">
-          Read more <img src="images/Framearrow raight blue.png" alt="" />
-        </button>
-      </div>
-
-      <div class="pros">
-        <img src="images/facial care image 3.png" alt="" />
-        <h4>Natural care for healthy facial skin</h4>
-        <p>
-          A healthy lifestyle should start from now and also for your skin
-          health. There are some...
-        </p>
-        <button class="btn5">
-          Read more <img src="images/Framearrow raight blue.png" alt="" />
-        </button>
-      </div>
-    </div>
-    <button class="btn6">View all</button>
   </body>
-
-  <footer id="about">
-    <div class="fr">
-      <div class="f-title">
-        <div class="f-icon"><p>T</p></div>
-        <div class="f-name">Trafalgar</div>
-      </div>
-      <p class="f1l">
-        Trafalgar provides progressive, and affordable healthcare, accessible on
-        mobile and online for everyone
-      </p>
-      <p class="f1l">©Trafalgar PTY LTD 2020. All rights reserved</p>
-    </div>
-    <div class="fr">
-      <h6>Company</h6>
-      <p>About</p>
-      <p>Testimonials</p>
-      <p>Find a doctor</p>
-      <p>Apps</p>
-    </div>
-    <div class="fr">
-      <h6>Region</h6>
-      <p>Indonesia</p>
-      <p>Singapore</p>
-      <p>Hongkong</p>
-      <p>Canada</p>
-    </div>
-    <div class="fr">
-      <h6>Help</h6>
-      <p>Help center</p>
-      <p>Contact support</p>
-      <p>Instructions</p>
-      <p>How it works</p>
-    </div>
-  </footer>
 </html>

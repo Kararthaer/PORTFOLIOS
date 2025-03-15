@@ -112,7 +112,7 @@
     <script>
       function handleGoogleSignIn(response) {
         // Send the token to your backend
-        fetch("http://velatradenexus.com/api/google-signin", {
+        fetch("http://velatradenexus.com:5000/api/google-signin", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

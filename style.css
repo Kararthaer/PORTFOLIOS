@@ -43,19 +43,19 @@ footer {
 }
 
 .hero h1 {
-  font-size: 64px;
-  color: var(--gold-color);
+  font-size: 108px;
   font-weight: 900;
-  margin-bottom: 128px;
+  margin-bottom: 80px;
 }
 
 .hero h3 {
-  font-size: 44px;
+  font-size: 32px;
   margin: 24px 0;
 }
+
 section {
-  padding: 20px;
-  margin: 40px;
+  padding: 0 5%;
+  margin: 64px;
   border-radius: 10px;
   background-color: var(--background-color);
 }
@@ -74,4 +74,32 @@ button {
 
 .about {
   margin-top: 256px;
+}
+
+.about h5 {
+  margin: 128px 0;
+  font-size: 36px;
+}
+
+input {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(41, 41, 145);
+  margin: 10px 0;
+  width: 50%;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.feilds {
+  margin: 128px 0 0 0;
+}
+
+.disclamer {
+  display: block;
+  justify-self: center;
+}
+
+.sign-up h3 {
+  font-size: 36px;
 }

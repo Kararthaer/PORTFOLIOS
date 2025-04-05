@@ -8,9 +8,14 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--text-color);
 }
+
+.btn {
+  transition: all 0.3s ease;
+}
+
 h1 {
   font-size: 72px;
   color: var(--gold-color);
@@ -40,6 +45,21 @@ footer {
   align-content: center;
   justify-items: center;
   font-weight: 600;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 50%;
 }
 
 .hero h1 {
@@ -73,14 +93,44 @@ button {
 }
 
 .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
   margin-top: 256px;
+}
+
+.about img {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 50%;
 }
 
 .about h5 {
   margin: 128px 0;
-  font-size: 36px;
+  font-size: 28px;
 }
 
+.why-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+}
+
+.why-us p {
+  font-size: 24px;
+}
+
+.why-us img {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  border-radius: 50%;
+}
 input {
   padding: 20px;
   border-radius: 5px;
@@ -89,6 +139,23 @@ input {
   width: 50%;
   font-size: 18px;
   font-weight: 600;
+}
+textarea {
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgb(41, 41, 145);
+  margin: 10px 0;
+  width: 50%;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
 }
 
 .feilds {
@@ -102,4 +169,90 @@ input {
 
 .sign-up h3 {
   font-size: 36px;
+}
+
+/* //////////////////////////// */
+/* //////////////////////////// */
+/* //////////////////////////// */
+/* //////////////////////////// */
+/* //////////////////////////// */
+/* //////////////////////////// */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 42px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 28px;
+  }
+
+  h5 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  section {
+    padding: 0 3%;
+    margin: 32px 0;
+  }
+
+  .hero,
+  .about,
+  .why-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero img,
+  .about img,
+  .why-us img {
+    max-width: 100%;
+    max-height: auto;
+    border-radius: 0;
+    margin: 32px 0;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+
+  .about h5 {
+    margin: 32px 0;
+    font-size: 20px;
+  }
+
+  .sign-up h3 {
+    font-size: 24px;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+  }
+
+  button {
+    padding: 16px 24px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+    height: auto;
+    text-align: center;
+    padding: 16px 0;
+  }
 }

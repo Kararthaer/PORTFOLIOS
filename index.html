@@ -3,139 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>Login Modal</title>
-    <!-- Add Google Sign-In script -->
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <!-- Add JWT decode library -->
-    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>velatradenexus</title>
   </head>
   <body>
-    <!-- Trigger button to open modal -->
-    <button id="openModal" class="trigger-btn">Open Login</button>
-
-    <!-- Modal Overlay -->
-    <div id="modalOverlay" class="modal-overlay">
-      <div class="modal-content">
-        <button class="close-btn">&times;</button>
-        <div class="form">
-          <div class="options">
-            <button class="log-in-btn1" id="sign-up">sign up</button>
-            <button class="log-in-btn1" id="log-in">log in</button>
-          </div>
-          <section id="form-login" class="form-page">
-            <h1>Enter your information</h1>
-            <form id="login-form">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                autocomplete="email"
-                placeholder="Enter Your Email"
-                required
-              />
-              <label for="password">Password</label>
-              <input
-                id="current-password"
-                type="password"
-                autocomplete="current-password"
-                placeholder="Write Your Password"
-                required
-              />
-              <button type="submit" id="logInBtn" class="btn-2">log in</button>
-              <div class="divider">
-                <span>or</span>
-              </div>
-              <!-- Add Google Sign-In button -->
-              <div
-                id="g_id_onload"
-                data-client_id="1012455829320-8kmfpi9eekbavp05iedg25361lo589hc.apps.googleusercontent.com"
-                data-callback="handleGoogleSignIn"
-                data-auto_prompt="false"
-                data-context="signin"
-                data-ux_mode="popup"
-                data-login_uri="http://velatradenexus.com"
-                data-cancel_on_tap_outside="false"
-              ></div>
-              <div
-                class="g_id_signin"
-                data-type="standard"
-                data-size="large"
-                data-theme="outline"
-                data-text="signin_with"
-                data-shape="rectangular"
-                data-logo_alignment="left"
-              ></div>
-            </form>
-          </section>
-
-          <section id="form-signup" class="form-page">
-            <h1>Enter your information</h1>
-            <form id="signup-form" onsubmit="return validatePassword()">
-              <label for="given-name">First Name</label>
-              <input id="given-name" type="text" required />
-
-              <label for="family-name">Last Name</label>
-              <input id="family-name" type="text" required />
-
-              <label for="DOB">date of birth</label>
-              <input id="DOB" type="date" required />
-
-              <label for="signup-email">Email</label>
-              <input id="signup-email" type="email" required />
-
-              <label for="signup-password">password</label>
-              <input id="signup-password" type="password" required />
-
-              <label for="confirm-password">Confirm password</label>
-              <input id="confirm-password" type="password" required />
-              <button type="submit" class="btn-2">Sign Up</button>
-              <div class="divider">
-                <span>or</span>
-              </div>
-              <!-- Add Google Sign-In button -->
-              <div class="g_id_signin" data-type="standard"></div>
-            </form>
-            <p id="password-error" style="color: red; display: none">
-              Passwords do not match!
-            </p>
-          </section>
-        </div>
+    <section class="hero">
+      <h1>velatradenexus</h1>
+      <h3>The Future of Finance in the GCC</h3>
+      <h5>
+        Discover a new era of financial services, NFTs, and blockchain solutions
+        <br />tailored for the Gulf. <strong>We're coming soon.</strong>
+      </h5>
+      <button class="btn-1">Join the Waitlist</button>
+    </section>
+    <section class="about">
+      <h5>
+        VelaNexus is on a mission to redefine financial possibilities in the
+        <br />
+        GCC. We're building a platform that blends cutting-edge financial <br />
+        services with the power of blockchain technology and NFTs.<br />
+        From wealth empowerment to digital innovation,<br />
+        we aim to connect the Gulf's ambitious future to <br />tomorrow's
+        solutions. Stay tuned for our launch!
+      </h5>
+      <p></p>
+    </section>
+    <section class="why-us">
+      <p>
+        The GCC is a global leader in growth and vision. At VelaNexus, we're
+        preparing to deliver: Next-gen financial tools for a digital age.
+        Blockchain solutions to unlock new opportunities. NFT innovations for
+        creators and collectors. Get ready for a platform designed with the Gulf
+        in mind.
+      </p>
+    </section>
+    <section class="sign-up">
+      <h3>
+        Be part of the revolution. Sign up to get exclusive updates on VelaNexus
+        and be the first to explore our financial and blockchain offerings.
+      </h3>
+      <div class="feilds">
+        <label for="">Full Name</label>
+        <input type="text" placeholder="Enter your name" />
+        <label for="">Email</label>
+        <input type="email" placeholder="Enter your email" />
       </div>
-    </div>
-    <script src="script.js"></script>
-    <script>
-      function handleGoogleSignIn(response) {
-        // Send the token to your backend
-        fetch("http://velatradenexus.com:5000/api/google-signin", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ token: response.credential }),
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.token) {
-              localStorage.setItem("token", data.token);
-              localStorage.setItem("user", JSON.stringify(data.user));
-              alert("Google Sign-In successful!");
-              document.getElementById("modalOverlay").style.display = "none";
-              document.body.style.overflow = "auto";
-            } else {
-              alert(data.message || "Google Sign-In failed");
-            }
-          })
-          .catch((error) => {
-            console.error("Error:", error);
-            alert("Error connecting to server");
-          });
-      }
-    </script>
+      <button class="btn-2">Subscribe Now</button>
+    </section>
+    <section class="disclamer">
+      <strong
+        >VelaNexus is in development and does not currently offer financial
+        services, NFTs, or blockchain products. This is a pre-launch site for
+        informational purposes only.</strong
+      >
+    </section>
+    <footer>
+      <p>© 2025 VelaNexus. All rights reserved.</p>
+    </footer>
   </body>
 </html>
